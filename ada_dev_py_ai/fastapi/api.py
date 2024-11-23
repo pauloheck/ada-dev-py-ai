@@ -27,7 +27,11 @@ def create_story(input: requesitoModel):
     """
     try:
         print(f'input: {input}')
-        return create_story_ai(input.input)
+        return create_story_ai({
+            "titulo": input.titulo,
+            "requisitos": input.requisitos,
+            "criterios_aceitacao": input.criterios_aceitacao
+        })
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
