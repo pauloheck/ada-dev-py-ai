@@ -12,6 +12,7 @@ def create_story(input: str):
     Input the row requirements and the story will be created.
     """
     try:
+        print('chamando a api ' + input)
         return create_story_ai(input)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
