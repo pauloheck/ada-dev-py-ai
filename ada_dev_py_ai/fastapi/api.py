@@ -1,20 +1,7 @@
 from fastapi import FastAPI, HTTPException
-from ada_dev_py_ai.fastapi.models import requesitoModel, storyModel
 
 from ada_dev_py_ai.crewai.create_story_ai import create_story_ai
-
-
-class requesitoModel(BaseModel):
-    titulo: str
-    requisitos: str
-    criterios_aceitacao: str
-
-
-class storyModel(BaseModel):
-    titulo: str
-    descricao: str
-    criterios_aceitacao: str
-
+from ada_dev_py_ai.fastapi.models import requesitoModel
 
 app = FastAPI()
 
