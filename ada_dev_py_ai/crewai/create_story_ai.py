@@ -21,7 +21,6 @@ def create_story_ai(input: str) -> str:
     entry_points = importlib_metadata.entry_points()
     # Use the new API to filter entry points
     my_plugins = entry_points.select(group='my_plugin_group')
-    
     my_crew = Crew(
         agents=[agent_po(input)],
         tasks=[task_create_story(input)]
