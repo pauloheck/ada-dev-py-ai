@@ -24,6 +24,7 @@ class PromptModel(BaseModel):
 
 @app.post('/story/create')
 def create_story(input: requesitoModel):
+    try:
     Create a story for the developer, by the user input requirements.
     Input the row requirements and the story will be created.
     """
