@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from ada_dev_py_ai.fastapi.models import requesitoModel, storyModel
 
 from ada_dev_py_ai.crewai.create_story_ai import create_story_ai
 
