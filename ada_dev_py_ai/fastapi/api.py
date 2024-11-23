@@ -34,8 +34,3 @@ def create_story(input: requesitoModel):
         })
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get('/')
-def root_start():
-    return {"message": "Hello, world!"}
