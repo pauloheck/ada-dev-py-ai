@@ -1,4 +1,5 @@
 import json
+import importlib_metadata
 
 from crewai import Crew
 
@@ -16,7 +17,11 @@ def create_story_ai(input: str) -> str:
     Returns:
         str: A JSON string representing the created story.
     """
-    # Initialize the Crew with agents and tasks
+    # Example of handling entry points with the new API
+    entry_points = importlib_metadata.entry_points()
+    # Use the new API to filter entry points
+    my_plugins = entry_points.select(group='my_plugin_group')
+    
     my_crew = Crew(
         agents=[agent_po(input)],
         tasks=[task_create_story(input)]
