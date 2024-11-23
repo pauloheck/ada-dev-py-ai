@@ -1,4 +1,10 @@
 # Configurações para interação com a API da OpenAI
 
-OPENAI_API_KEY = 'sua-chave-api-aqui'
+import os
+from dotenv import load_dotenv
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 OPENAI_MODEL = 'text-davinci-003'
