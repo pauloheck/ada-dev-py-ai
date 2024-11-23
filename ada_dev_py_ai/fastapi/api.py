@@ -1,7 +1,7 @@
 import openai
 from config_openai import OPENAI_API_KEY, OPENAI_MODEL
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from ada_dev_py_ai.crewai.create_story_ai import create_story_ai
 
@@ -18,7 +18,8 @@ class storyModel(BaseModel):
     criterios_aceitacao: str
 
 
-app = FastAPI()
+class PromptModel(BaseModel):
+    prompt: str = Field(..., example="Once upon a time...")
 
 
 @app.post('/story/create')
@@ -41,9 +42,11 @@ openai.api_key = OPENAI_API_KEY
 
 
 @app.post('/create-story')
-def story(prompt: str):
+def story(input: PromptModel):
     """
     Gera uma história baseada no prompt fornecido usando a API da OpenAI.
+    """
+    prompt = input.prompt
     """
     try:
         response = openai.Completion.create(engine=OPENAI_MODEL, prompt=prompt, max_tokens=150)
