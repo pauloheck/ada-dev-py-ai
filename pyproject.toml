@@ -6,9 +6,11 @@ authors = ["pauloheck <pauloheck@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "3.12.*"
 fastapi = "^0.115.5"
 uvicorn = {extras = ["standard"], version = "^0.32.1"}
+crewai = {extras = ["tools"], version = "^0.80.0"}
+crewai-tools = "^0.14.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -17,12 +19,40 @@ pytest-cov = "^6.0.0"
 blue = "^0.9.1"
 isort = "^5.13.2"
 taskipy = "^1.14.0"
+ruff = "^0.8.0"
 
 
 [tool.poetry.group.doc.dependencies]
 mkdocs-material = "^9.5.45"
 mkdocstrings = "^0.27.0"
 mkdocstrings-python = "^1.12.2"
+
+
+[tool.pytest.ini.options]
+pythonpath = "."
+addopts = '-p no:warnings'
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+extend-exclude =['migrations']
+
+[tool.ruff.lint]
+preview = true
+select =['I','F','E','W','PL','PT']
+
+[tool.ruff.format]
+quote-style = 'single'
+
+
+[tool.taskipy.tasks]
+pre_run = 'task format'
+run = 'fastapi dev ada_dev_py_ai\fastapi\api.py'
+pre_test = 'task lint'
+test = 'pytest --cov=fast_zero -vv'
+post_test = 'coverage html'
+lint = 'ruff check . && ruff check . --diff'
+format = 'ruff check . --fix && ruff format .'
 
 [build-system]
 requires = ["poetry-core"]
