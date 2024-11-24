@@ -2,15 +2,22 @@ import logging
 
 from crewai import Crew
 
-from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_test
+from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_test, agent_software_architect
 from ada_dev_py_ai.crewai.reverse_engineering import map_requirements_from_code
-from ada_dev_py_ai.crewai.tasks import task_create_project_plan, task_create_story, task_create_test
+from ada_dev_py_ai.crewai.tasks import task_create_project_plan, task_create_story, task_create_test, task_remap_application
 
 # Configuração básica do logging
 logging.basicConfig(level=logging.ERROR)
 
+def remap_application(input: str):
+    logging.debug(f'Remapping application with input: {input}')
+    crew = Crew(agents=[agent_software_architect(input)], tasks=[task_remap_application(input)], verbose=True)
 
-def create_test_ai(input: str):
+    result = crew.kickoff()
+    print(result.json_dict)
+
+    return {'status': 'success', 'data': result.json_dict}
+
     logging.debug(f'Creating test AI with input: {input}')
     crew = Crew(agents=[agent_test(input)], tasks=[task_create_test(input)], memory=True, verbose=True)
 
