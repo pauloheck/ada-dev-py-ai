@@ -48,7 +48,7 @@ class ProjectModel(BaseModel):
     feasibility: str
     project_schedule: str
     communication_plan: str
-    risks: str
+    risks: list[RiskModel]
     risk_management_plan: str
     team: list[str]
     performance_kpis: str
