@@ -43,6 +43,6 @@ class ProjectModel(BaseModel):
     risks: str
     risk_management_plan: str
     team: list[str]
-    performance_reports_kpis: str
+    performance_kpis: str
     budget_plan: str
     quality_plan: str
