@@ -23,6 +23,6 @@ def task_create_test(input: str):
         a list of detailed test cases covering all critical scenarios
         the output should be a set of test cases ensuring software quality
         """,
-        output_json=TestModel,
+        output_json=TestModel(),
         agent=agent_test(input),
     )
