@@ -13,7 +13,8 @@ class TestModel(BaseModel):
     steps: list[str]
     expected_result: str
     actual_result: str = None
-    status: str = "Not Executed"
+    status: str = 'Not Executed'
+
 
 class StoryModel(BaseModel):
     title: str
