@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Projeto AdaDev
 
 ## Descrição
 Esta é a aplicação backend da plataforma AdaDev.
@@ -7,13 +7,11 @@ Esta é a aplicação backend da plataforma AdaDev.
 
 Empowering developers with advanced AI to optimize software development.
 
-**Constant Innovation**
 
-Turn Your Ideas into Reality with AdaDev!
 
 ## Estrutura do Projeto
 - `ada_dev_py_ai/`: Contém o código principal do projeto.
-  - `crewai/`: Módulos relacionados à criação de histórias e agentes.
+  - `crewai/`: Módulo de IA para geração das informações
   - `fastapi/`: Módulos relacionados à API FastAPI.
 
 ## Instalação
