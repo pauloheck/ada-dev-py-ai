@@ -13,6 +13,9 @@ The implementation of development stories is crucial for developers and architec
 Additionally, the creation of documentation and architecture diagrams at all necessary levels is implemented to support project development. This includes high-level overviews, detailed component designs, and interaction diagrams to facilitate a comprehensive understanding of the system architecture.
 The implementation of development stories is crucial for developers and architects to have the information expected by users, requesters, and stakeholders. This ensures that all parties involved have a clear understanding of the project requirements and objectives.
 
+## Test Generation for Project Validation
+The implementation of necessary test generation is crucial for validating the project. This ensures that all functionalities are working as expected and helps in maintaining the quality and reliability of the software. Automated tests should cover various aspects of the application, including unit tests, integration tests, and end-to-end tests.
+
 ## Project Structure
 - `ada_dev_py_ai/`: Contains the main project code.
   - `crewai/`: AI module for information generation
