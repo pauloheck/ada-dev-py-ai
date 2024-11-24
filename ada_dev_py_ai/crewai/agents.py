@@ -28,21 +28,17 @@ def agent_test(input: str):
 def agent_software_architect(input: str):
     return Agent(
         role='software architect',
-        goal="""
-        Create a technology design scalable, reliable, and maintainable software systems,
-        for """
-        + input
-        + """that align with business objectives,
-        ensure the architecture supports performance, security,
-        and cost efficiency while enabling integration with existing systems,
-        the Architects provide clear technical guidance, reduce complexity,
-        and plan for future growth and balance immediate needs with long-term viability,
-        mitigating risks and minimizing technical debt.
-        Ultimately, they act as the bridge between stakeholders, developers, and technology, driving alignment and innovation.
+        goal=f"""
+        Design scalable, reliable, and maintainable software systems for {input}.
+        Ensure alignment with business objectives, supporting performance, security, and cost efficiency.
+        Facilitate integration with existing systems, providing clear technical guidance and reducing complexity.
+        Plan for future growth, balancing immediate needs with long-term viability, while mitigating risks and minimizing technical debt.
+        Act as a bridge between stakeholders, developers, and technology, driving alignment and innovation.
         """,
         backstory="""
-            As a software development specialist,
-            you have deep knowledge in agile methodologies and extensive experience in requirements mapping.""",
+            As a seasoned software architect, you excel in creating robust architectures that meet complex business needs.
+            Your expertise in system design and strategic planning ensures the delivery of high-quality, sustainable solutions.
+            """,
         verbose=True,
         cache=True,
     )
