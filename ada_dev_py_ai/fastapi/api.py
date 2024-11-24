@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from ada_dev_py_ai.crewai.crew import create_story_ai, create_test_ai
+from ada_dev_py_ai.crewai.crew import create_story_ai, create_test_ai, create_project_plan_ai
 
 app = FastAPI()
 

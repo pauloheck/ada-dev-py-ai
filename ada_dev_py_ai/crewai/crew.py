@@ -2,8 +2,8 @@ import logging
 
 from crewai import Crew
 
-from ada_dev_py_ai.crewai.agents import agent_po, agent_test
-from ada_dev_py_ai.crewai.tasks import task_create_story, task_create_test
+from ada_dev_py_ai.crewai.agents import agent_po, agent_test, agent_project_manager
+from ada_dev_py_ai.crewai.tasks import task_create_story, task_create_test, task_create_project_plan
 
 # Configuração básica do logging
 logging.basicConfig(level=logging.ERROR)
