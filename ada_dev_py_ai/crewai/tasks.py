@@ -1,6 +1,6 @@
 from crewai import Task
 
-from ada_dev_py_ai.crewai.agents import agent_po
+from ada_dev_py_ai.crewai.agents import agent_po, agent_test
 from ada_dev_py_ai.models import StoryModel
 
 
@@ -14,6 +14,8 @@ def task_create_story(input: str):
         output_json=StoryModel,
         agent=agent_po(input),
     )
+
+
 def task_create_test(input: str):
     return Task(
         description='Criar casos de teste abrangentes para os seguintes requisitos ' + input,
