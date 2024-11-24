@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 
-@app.get('/test/create')
+@app.post('/test/create')
 def create_test(input: str):
     """
     Create a test for the developer, by the user input requirements.
@@ -26,6 +26,9 @@ def create_test(input: str):
         return create_test_ai(input)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post('/story/create')
 def create_story(input: str):
     """
     Create a story for the developer, by the user input requirements.

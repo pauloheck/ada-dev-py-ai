@@ -4,26 +4,25 @@ from crewai import Agent
 def agent_po(input: str):
     return Agent(
         role='product owner',
-        goal='Create a development story with the following data ' + input,
+        goal='Create a full development List of story with the following data ' + input + ' covers all requirements',
         backstory="""
             As a software development specialist,
             you have deep knowledge in agile methodologies and extensive experience in requirements mapping.""",
         verbose=True,
-        cache=True,
     )
 
 
 def agent_test(input: str):
     return Agent(
         role='test engineer',
-        goal='Create comprehensive test cases for the provided requirements: ' + input,
+        goal='Create full list of test cases for the provided requirements: ' + input + ' covers all use cases',
         backstory="""
             As an experienced test engineer,
             you specialize in ensuring software quality through rigorous and detailed testing.
             You have a deep understanding of testing methodologies and can identify critical test scenarios.""",
         verbose=True,
-        cache=True,
     )
+
 
 def agent_software_architect(input: str):
     return Agent(
@@ -40,5 +39,4 @@ def agent_software_architect(input: str):
             You are adept at balancing technical excellence with business needs, ensuring long-term success and sustainability.
             """,
         verbose=True,
-        cache=True,
     )

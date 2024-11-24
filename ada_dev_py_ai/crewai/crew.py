@@ -1,15 +1,16 @@
 import logging
-from crewai import Crew
 
-# Configuração básica do logging
-logging.basicConfig(level=logging.DEBUG)
+from crewai import Crew
 
 from ada_dev_py_ai.crewai.agents import agent_po, agent_test
 from ada_dev_py_ai.crewai.tasks import task_create_story, task_create_test
 
+# Configuração básica do logging
+logging.basicConfig(level=logging.ERROR)
+
 
 def create_test_ai(input: str):
-    logging.debug(f"Creating test AI with input: {input}")
+    logging.debug(f'Creating test AI with input: {input}')
     crew = Crew(agents=[agent_test(input)], tasks=[task_create_test(input)], memory=True, verbose=True)
 
     result = crew.kickoff()
@@ -19,8 +20,8 @@ def create_test_ai(input: str):
 
 
 def create_story_ai(input: str):
-    logging.debug(f"Creating story AI with input: {input}")
-    crew = Crew(agents=[agent_po(input)], tasks=[task_create_story(input)], memory=True, verbose=True)
+    logging.debug(f'Creating story AI with input: {input}')
+    crew = Crew(agents=[agent_po(input)], tasks=[task_create_story(input)], verbose=True)
 
     result = crew.kickoff()
     print(result.json_dict)
