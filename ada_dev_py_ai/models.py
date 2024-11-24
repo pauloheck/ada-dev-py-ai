@@ -33,6 +33,15 @@ class ListStoryModel(BaseModel):
     stories: list[StoryModel]
 
 
+class KPIModel(BaseModel):
+    kpi_id: str
+    name: str
+    description: str
+    target_value: float
+    current_value: float
+    status: str
+
+
 class RiskModel(BaseModel):
     risk_id: str
     description: str
