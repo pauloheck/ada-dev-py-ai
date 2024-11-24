@@ -1,6 +1,6 @@
 from crewai import Task
 
-from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_software_architect, agent_test
+from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_software_architect, agent_test, agent_developer
 from ada_dev_py_ai.models import ListStoryModel, ListTestModel, ProjectModel, requesitoModel
 
 
@@ -40,6 +40,19 @@ def task_create_test(input: str):
         """,
         output_json=ListTestModel,
         agent=agent_test(input),
+    )
+
+
+def task_map_business_rules(input: str):
+    return Task(
+        description='Mapear as regras de negócio implementadas no código fonte para ' + input,
+        expected_output="""
+        um relatório detalhado das regras de negócio implementadas no sistema
+        o output deve ser um documento estruturado que descreve as regras de negócio e como elas são aplicadas no código
+        a linguagem de saída deve ser em português (pt-br)
+        """,
+        output_json=requesitoModel,
+        agent=agent_developer(input),
     )
 
 
