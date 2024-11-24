@@ -12,6 +12,10 @@ Welcome to the AdaDev platform, a cutting-edge backend application designed to r
 
 - **Test Generation for Validation**: Our platform includes robust test generation capabilities to validate project functionalities. This ensures that all components work as expected, maintaining the quality and reliability of the software through automated unit, integration, and end-to-end tests.
 
+### Project Creation
+
+- **Create New Projects**: Easily create new projects with a name and description, streamlining the initial setup process and ensuring all necessary information is captured from the start.
+
 ### API-Driven Architecture
 
 All features of the AdaDev platform are exposed through a sophisticated API, leveraging advanced AI algorithms. This architecture facilitates seamless integration and interaction with external systems, providing a flexible and scalable solution for modern software development needs.
