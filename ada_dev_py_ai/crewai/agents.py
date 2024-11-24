@@ -3,11 +3,11 @@ from crewai import Agent
 
 def agent_po(input: str):
     return Agent(
-        role='produt owner',
-        goal='Criar uma historia para desenvolvimento com os seguintes dados ' + input,
+        role='product owner',
+        goal='Create a development story with the following data ' + input,
         backstory="""
-            Como especialista em desenvolvimento de software
-            Você tem profundo conhecimento em metodologias ágeis e vasta experiência no mapeamento de requisitos""",
+            As a software development specialist,
+            you have deep knowledge in agile methodologies and extensive experience in requirements mapping.""",
         verbose=True,
         cache=True,
     )
@@ -16,11 +16,11 @@ def agent_po(input: str):
 def agent_test(input: str):
     return Agent(
         role='test engineer',
-        goal='Criar casos de teste abrangentes para os requisitos fornecidos: ' + input,
+        goal='Create comprehensive test cases for the provided requirements: ' + input,
         backstory="""
-            Como engenheiro de teste experiente,
-            você é especializado em garantir a qualidade do software através de testes rigorosos e detalhados.
-            Você tem um profundo entendimento de metodologias de teste e é capaz de identificar cenários de teste críticos.""",
+            As an experienced test engineer,
+            you specialize in ensuring software quality through rigorous and detailed testing.
+            You have a deep understanding of testing methodologies and can identify critical test scenarios.""",
         verbose=True,
         cache=True,
     )
@@ -41,8 +41,8 @@ def agent_software_architect(input: str):
         Ultimately, they act as the bridge between stakeholders, developers, and technology, driving alignment and innovation.
         """,
         backstory="""
-            Como especialista em desenvolvimento de software
-            Você tem profundo conhecimento em metodologias ágeis e vasta experiência no mapeamento de requisitos""",
+            As a software development specialist,
+            you have deep knowledge in agile methodologies and extensive experience in requirements mapping.""",
         verbose=True,
         cache=True,
     )
