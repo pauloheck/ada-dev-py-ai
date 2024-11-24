@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from ada_dev_py_ai.crewai.crew import create_story_ai, create_test_ai, create_project_plan_ai
+from ada_dev_py_ai.crewai.crew import create_project_plan_ai, create_story_ai, create_test_ai
 
 app = FastAPI()
 
@@ -39,6 +39,7 @@ def create_project(input: str):
         return create_project_plan_ai(input)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post('/story/create')
 def create_story(input: str):

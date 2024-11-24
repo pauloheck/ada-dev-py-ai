@@ -1,6 +1,6 @@
 from crewai import Task
 
-from ada_dev_py_ai.crewai.agents import agent_po, agent_test
+from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_test
 from ada_dev_py_ai.models import ListStoryModel, ListTestModel
 
 
@@ -28,6 +28,7 @@ def task_create_project_plan(input: str):
         output_json=ListStoryModel,  # Assuming a similar model structure
         agent=agent_project_manager(input),
     )
+
 
 def task_create_test(input: str):
     return Task(

@@ -1,4 +1,3 @@
-from typing import Optional
 from pydantic import BaseModel
 
 
@@ -9,12 +8,16 @@ class requesitoModel(BaseModel):
 
 
 class TestModel(BaseModel):
-    test_case_id: Optional[str] = None
-    description: Optional[str] = None
-    steps: Optional[list[str]] = None
-    expected_result: Optional[str] = None
-    actual_result: Optional[str] = None
-    status: Optional[str] = 'Not Executed'
+    test_case_id: str
+    description: str
+    steps: str
+    expected_result: str
+    actual_result: str
+    status: str
+
+
+class ListTestModel(BaseModel):
+    test_cases: list[TestModel]
 
 
 class StoryModel(BaseModel):
@@ -24,3 +27,11 @@ class StoryModel(BaseModel):
     acceptance_criteria: str
     story_flow: str
     expected_result: str
+
+
+class ListStoryModel(BaseModel):
+    stories: list[StoryModel]
+
+
+class ProjectModel(BaseModel):
+    title: str

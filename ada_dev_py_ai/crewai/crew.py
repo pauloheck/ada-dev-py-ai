@@ -2,8 +2,8 @@ import logging
 
 from crewai import Crew
 
-from ada_dev_py_ai.crewai.agents import agent_po, agent_test, agent_project_manager
-from ada_dev_py_ai.crewai.tasks import task_create_story, task_create_test, task_create_project_plan
+from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_test
+from ada_dev_py_ai.crewai.tasks import task_create_project_plan, task_create_story, task_create_test
 
 # Configuração básica do logging
 logging.basicConfig(level=logging.ERROR)
@@ -27,6 +27,7 @@ def create_project_plan_ai(input: str):
     print(result.json_dict)
 
     return {'status': 'success', 'data': result.json_dict}
+
 
 def create_story_ai(input: str):
     logging.debug(f'Creating story AI with input: {input}')

@@ -40,6 +40,7 @@ def agent_project_manager(input: str):
         verbose=True,
     )
 
+
 def agent_software_architect(input: str):
     return Agent(
         role='software architect',
