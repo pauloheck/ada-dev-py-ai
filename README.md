@@ -1,7 +1,15 @@
 # Nome do Projeto
 
 ## Descrição
-Uma breve descrição do que o projeto faz e qual problema ele resolve.
+Esta é a aplicação backend da plataforma AdaDev.
+
+**Transforming the Future of Software Development**
+
+Empowering developers with advanced AI to optimize software development.
+
+**Constant Innovation**
+
+Turn Your Ideas into Reality with AdaDev!
 
 ## Estrutura do Projeto
 - `ada_dev_py_ai/`: Contém o código principal do projeto.
