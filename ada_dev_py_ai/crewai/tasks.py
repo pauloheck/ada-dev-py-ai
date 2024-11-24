@@ -1,7 +1,7 @@
 from crewai import Task
 
-from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_software_architect, agent_test, agent_developer
-from ada_dev_py_ai.models import ListStoryModel, ListTestModel, ProjectModel, requesitoModel
+from ada_dev_py_ai.crewai.agents import agent_developer, agent_po, agent_project_manager, agent_software_architect, agent_test
+from ada_dev_py_ai.models import ListStoryModel, ListTestModel, ProjectModel, RequirementModel
 
 
 def task_create_story(input: str):
@@ -51,7 +51,7 @@ def task_map_business_rules(input: str):
         o output deve ser um documento estruturado que descreve as regras de negócio e como elas são aplicadas no código
         a linguagem de saída deve ser em português (pt-br)
         """,
-        output_json=requesitoModel,
+        output_json=RequirementModel,
         agent=agent_developer(input),
     )
 
@@ -64,6 +64,6 @@ def task_remap_application(input: str):
         the output should be a structured document outlining the system's components and their interactions
         the output language should be in portuguese (pt-br)
         """,
-        output_json=requesitoModel,
+        output_json=RequirementModel,
         agent=agent_software_architect(input),
     )

@@ -5,6 +5,7 @@ class RequirementModel(BaseModel):
     """
     Model representing a requirement with its title, detailed requirements, and acceptance criteria.
     """
+
     title: str
     requirements: str
     acceptance_criteria: str

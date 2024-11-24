@@ -52,6 +52,8 @@ def create_story(input: str):
         return create_story_ai(input)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.post('/business-rules/map')
 def map_business_rules(input: str):
     """
