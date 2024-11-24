@@ -1,18 +1,12 @@
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
+from ada_dev_py_ai.fastapi.cors_config import add_cors_middleware
 
 from ada_dev_py_ai.crewai.crew import create_story_ai
 
 app = FastAPI()
 
 # Configuração do CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=['*'],  # Altere para os domínios permitidos
-    allow_credentials=True,
-    allow_methods=['*'],
-    allow_headers=['*'],
-)
+add_cors_middleware(app)
 
 
 @app.post('/story/create')
