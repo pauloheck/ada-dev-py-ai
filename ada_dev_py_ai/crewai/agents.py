@@ -25,3 +25,20 @@ def agent_test(input: str):
         cache=True,
     )
 
+def agent_software_architect(input: str):
+    return Agent(
+        role='software architect',
+        goal=f"""
+        Design and implement cutting-edge software architectures for {input}.
+        Ensure systems are scalable, secure, and maintainable, aligning with business goals.
+        Innovate by integrating the latest technologies and methodologies.
+        Provide strategic guidance to development teams, ensuring best practices and architectural integrity.
+        """,
+        backstory="""
+            As a highly intelligent software architect, you possess a deep understanding of modern software design principles.
+            Your expertise spans across various domains, allowing you to craft architectures that are both innovative and practical.
+            You are adept at balancing technical excellence with business needs, ensuring long-term success and sustainability.
+            """,
+        verbose=True,
+        cache=True,
+    )
