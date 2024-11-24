@@ -7,7 +7,10 @@ This is the backend application for the AdaDev platform.
 
 Empowering developers with advanced AI to optimize software development.
 
-## Development Stories
+## Development Stories and Architecture Documentation
+The implementation of development stories is crucial for developers and architects to have the information expected by users, requesters, and stakeholders. This ensures that all parties involved have a clear understanding of the project requirements and objectives.
+
+Additionally, the creation of documentation and architecture diagrams at all necessary levels is implemented to support project development. This includes high-level overviews, detailed component designs, and interaction diagrams to facilitate a comprehensive understanding of the system architecture.
 The implementation of development stories is crucial for developers and architects to have the information expected by users, requesters, and stakeholders. This ensures that all parties involved have a clear understanding of the project requirements and objectives.
 
 ## Project Structure
