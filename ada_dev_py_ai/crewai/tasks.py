@@ -1,7 +1,7 @@
 from crewai import Task
 
 from ada_dev_py_ai.crewai.agents import agent_po, agent_test
-from ada_dev_py_ai.models import StoryModel
+from ada_dev_py_ai.models import StoryModel, TestModel
 
 
 def task_create_story(input: str):
@@ -23,6 +23,6 @@ def task_create_test(input: str):
         a list of detailed test cases covering all critical scenarios
         the output should be a set of test cases ensuring software quality
         """,
-        output_json=None,  # Substitua por um modelo apropriado se necessário
+        output_json=TestModel,
         agent=agent_test(input),
     )
