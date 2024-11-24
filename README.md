@@ -7,6 +7,9 @@ This is the backend application for the AdaDev platform.
 
 Empowering developers with advanced AI to optimize software development.
 
+## Development Stories
+The implementation of development stories is crucial for developers and architects to have the information expected by users, requesters, and stakeholders. This ensures that all parties involved have a clear understanding of the project requirements and objectives.
+
 ## Project Structure
 - `ada_dev_py_ai/`: Contains the main project code.
   - `crewai/`: AI module for information generation
