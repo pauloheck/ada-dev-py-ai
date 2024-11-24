@@ -14,3 +14,13 @@ def task_create_story(input: str):
         output_json=StoryModel,
         agent=agent_po(input),
     )
+def task_create_test(input: str):
+    return Task(
+        description='Criar casos de teste abrangentes para os seguintes requisitos ' + input,
+        expected_output="""
+        uma lista de casos de teste detalhados que cobrem todos os cenários críticos
+        a saída deve ser um conjunto de casos de teste que garantam a qualidade do software
+        """,
+        output_json=None,  # Substitua por um modelo apropriado se necessário
+        agent=agent_test(input),
+    )
