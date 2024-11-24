@@ -6,10 +6,10 @@ from ada_dev_py_ai.models import StoryModel
 
 def task_create_story(input: str):
     return Task(
-        description='Criar uma história para desenvolvimento com os seguintes dados ' + input,
+        description='Create a development story with the following data ' + input,
         expected_output="""
-        uma história de desenvolvimento de software com os dados fornecidos
-        a Saida deve ser um texto com a história de desenvolvimento de software
+        a software development story with the provided data
+        the output should be a text with the software development story
         """,
         output_json=StoryModel,
         agent=agent_po(input),
@@ -18,10 +18,10 @@ def task_create_story(input: str):
 
 def task_create_test(input: str):
     return Task(
-        description='Criar casos de teste abrangentes para os seguintes requisitos ' + input,
+        description='Create comprehensive test cases for the following requirements ' + input,
         expected_output="""
-        uma lista de casos de teste detalhados que cobrem todos os cenários críticos
-        a saída deve ser um conjunto de casos de teste que garantam a qualidade do software
+        a list of detailed test cases covering all critical scenarios
+        the output should be a set of test cases ensuring software quality
         """,
         output_json=None,  # Substitua por um modelo apropriado se necessário
         agent=agent_test(input),
