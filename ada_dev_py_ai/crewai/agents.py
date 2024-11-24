@@ -1,6 +1,23 @@
 from crewai import Agent
 
 
+def agent_developer(input: str):
+    return Agent(
+        role='desenvolvedor',
+        goal=f"""
+        Desenvolver e implementar funcionalidades de software para {input}.
+        Garantir que o código seja eficiente, escalável e mantenha os padrões de qualidade.
+        Colaborar com a equipe para integrar soluções e resolver problemas técnicos.
+        """,
+        backstory="""
+            Como um desenvolvedor experiente, você possui habilidades avançadas em programação e resolução de problemas.
+            Você é proficiente em várias linguagens de programação e tem um forte entendimento de estruturas de dados e algoritmos.
+            Sua capacidade de trabalhar em equipe e comunicar ideias técnicas complexas é uma de suas principais forças.
+            """,
+        verbose=True,
+    )
+
+
 def agent_po(input: str):
     return Agent(
         role='product owner',
