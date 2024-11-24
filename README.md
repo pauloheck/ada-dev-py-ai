@@ -1,37 +1,35 @@
-# Projeto AdaDev
+# AdaDev Project
 
-## Descrição
-Esta é a aplicação backend da plataforma AdaDev.
+## Description
+This is the backend application for the AdaDev platform.
 
 **Transforming the Future of Software Development**
 
 Empowering developers with advanced AI to optimize software development.
 
+## Project Structure
+- `ada_dev_py_ai/`: Contains the main project code.
+  - `crewai/`: AI module for information generation
+  - `fastapi/`: Modules related to the FastAPI API.
 
-
-## Estrutura do Projeto
-- `ada_dev_py_ai/`: Contém o código principal do projeto.
-  - `crewai/`: Módulo de IA para geração das informações
-  - `fastapi/`: Módulos relacionados à API FastAPI.
-
-## Instalação
-Instruções sobre como instalar as dependências e configurar o ambiente.
+## Installation
+Instructions on how to install dependencies and set up the environment.
 
 ```bash
-# Instale as dependências
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-## Uso
-Instruções sobre como executar o projeto ou usar suas funcionalidades principais.
+## Usage
+Instructions on how to run the project or use its main features.
 
 ```bash
-# Execute o servidor FastAPI
+# Run the FastAPI server
 uvicorn ada_dev_py_ai.fastapi.api:app --reload
 ```
 
-## Contribuição
-Instruções sobre como contribuir para o projeto.
+## Contribution
+Instructions on how to contribute to the project.
 
-## Licença
-Informações sobre a licença do projeto.
+## License
+Information about the project license.
