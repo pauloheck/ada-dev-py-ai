@@ -1,10 +1,13 @@
 from pydantic import BaseModel
 
 
-class requesitoModel(BaseModel):
-    titulo: str
-    requisitos: str
-    criterios_aceitacao: str
+class RequirementModel(BaseModel):
+    """
+    Model representing a requirement with its title, detailed requirements, and acceptance criteria.
+    """
+    title: str
+    requirements: str
+    acceptance_criteria: str
 
 
 class TestModel(BaseModel):
