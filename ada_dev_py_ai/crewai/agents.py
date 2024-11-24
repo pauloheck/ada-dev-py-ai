@@ -13,6 +13,18 @@ def agent_po(input: str):
     )
 
 
+def agent_test(input: str):
+    return Agent(
+        role='test engineer',
+        goal='Criar casos de teste abrangentes para os requisitos fornecidos: ' + input,
+        backstory="""
+            Como engenheiro de teste experiente,
+            você é especializado em garantir a qualidade do software através de testes rigorosos e detalhados.
+            Você tem um profundo entendimento de metodologias de teste e é capaz de identificar cenários de teste críticos.""",
+        verbose=True,
+        cache=True,
+    )
+
 def agent_software_architect(input: str):
     return Agent(
         role='software architect',
