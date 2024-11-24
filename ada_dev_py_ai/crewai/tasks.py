@@ -1,7 +1,7 @@
 from crewai import Task
 
 from ada_dev_py_ai.crewai.agents import agent_po, agent_project_manager, agent_test
-from ada_dev_py_ai.models import ListStoryModel, ListTestModel
+from ada_dev_py_ai.models import ListStoryModel, ListTestModel, ProjectModel
 
 
 def task_create_story(input: str):
@@ -25,7 +25,7 @@ def task_create_project_plan(input: str):
         the output should be a text with a list of project phases and deliverables
         the output language should be in portuguese (pt-br)
         """,
-        output_json=ListStoryModel,  # Assuming a similar model structure
+        output_json=ProjectModel,  # Assuming a similar model structure
         agent=agent_project_manager(input),
     )
 

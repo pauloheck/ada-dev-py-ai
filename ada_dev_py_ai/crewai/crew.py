@@ -39,17 +39,3 @@ def create_story_ai(input: str):
 
     return {'status': 'success', 'data': result.json_dict}
 
-
-def analyze_code_and_map_requirements(source_code: str):
-    logging.debug('Analyzing code and mapping requirements')
-    analysis_result = map_requirements_from_code(source_code)
-    print(analysis_result)
-    return {'status': 'success', 'data': analysis_result}
-
-    logging.debug(f'Mapping project with input: {input}')
-    crew = Crew(agents=[agent_po(input), agent_project_manager(input), agent_test(input)], tasks=[task_create_story(input), task_create_project_plan(input), task_create_test(input)], verbose=True)
-
-    result = crew.kickoff()
-    print(result.json_dict)
-
-    return {'status': 'success', 'data': result.json_dict}
