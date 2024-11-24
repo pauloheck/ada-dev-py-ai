@@ -33,6 +33,14 @@ class ListStoryModel(BaseModel):
     stories: list[StoryModel]
 
 
+class RiskModel(BaseModel):
+    risk_id: str
+    description: str
+    impact: str
+    probability: str
+    mitigation_plan: str
+
+
 class ProjectModel(BaseModel):
     title: str
     scope: str
