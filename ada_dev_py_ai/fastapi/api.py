@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from ada_dev_py_ai.crewai.crew import create_project_plan_ai, create_story_ai, create_test_ai
+from ada_dev_py_ai.crewai.crew import create_project_plan_ai, create_story_ai, create_test_ai, remap_application
 
 app = FastAPI()
 
@@ -50,5 +50,16 @@ def create_story(input: str):
     try:
         print('chamando a api ' + input)
         return create_story_ai(input)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+@app.post('/business-rules/map')
+def map_business_rules(input: str):
+    """
+    Map the business rules implemented in the source code based on user input.
+    Input the raw requirements and the business rules mapping will be created.
+    """
+    try:
+        print('Mapping business rules with input: ' + input)
+        return remap_application(input)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
