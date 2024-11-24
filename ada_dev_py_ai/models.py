@@ -35,3 +35,14 @@ class ListStoryModel(BaseModel):
 
 class ProjectModel(BaseModel):
     title: str
+    scope: str
+    stakeholders: list[str]
+    feasibility: str
+    project_schedule: str
+    communication_plan: str
+    risks: str
+    risk_management_plan: str
+    team: list[str]
+    performance_reports_kpis: str
+    budget_plan: str
+    quality_plan: str
