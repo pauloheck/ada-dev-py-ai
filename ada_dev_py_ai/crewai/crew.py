@@ -19,6 +19,15 @@ def create_test_ai(input: str):
     return {'status': 'success', 'data': result.json_dict}
 
 
+def create_project_plan_ai(input: str):
+    logging.debug(f'Creating project plan AI with input: {input}')
+    crew = Crew(agents=[agent_project_manager(input)], tasks=[task_create_project_plan(input)], verbose=True)
+
+    result = crew.kickoff()
+    print(result.json_dict)
+
+    return {'status': 'success', 'data': result.json_dict}
+
 def create_story_ai(input: str):
     logging.debug(f'Creating story AI with input: {input}')
     crew = Crew(agents=[agent_po(input)], tasks=[task_create_story(input)], verbose=True)

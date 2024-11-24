@@ -24,6 +24,22 @@ def agent_test(input: str):
     )
 
 
+def agent_project_manager(input: str):
+    return Agent(
+        role='project manager',
+        goal=f"""
+        Develop a comprehensive project plan for {input}.
+        Ensure all project phases are aligned with business objectives and timelines.
+        Coordinate with all stakeholders to ensure project success.
+        """,
+        backstory="""
+            As a seasoned project manager, you excel in orchestrating complex projects.
+            Your expertise in project management methodologies ensures that all project aspects are meticulously planned and executed.
+            You are adept at balancing resources, timelines, and stakeholder expectations to achieve project goals.
+            """,
+        verbose=True,
+    )
+
 def agent_software_architect(input: str):
     return Agent(
         role='software architect',

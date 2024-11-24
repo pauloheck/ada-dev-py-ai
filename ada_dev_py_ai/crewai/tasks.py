@@ -17,6 +17,18 @@ def task_create_story(input: str):
     )
 
 
+def task_create_project_plan(input: str):
+    return Task(
+        description='Create a comprehensive project plan for the following requirements ' + input,
+        expected_output="""
+        a detailed project plan covering all phases of the project lifecycle
+        the output should be a text with a list of project phases and deliverables
+        the output language should be in portuguese (pt-br)
+        """,
+        output_json=ListStoryModel,  # Assuming a similar model structure
+        agent=agent_project_manager(input),
+    )
+
 def task_create_test(input: str):
     return Task(
         description='Create comprehensives List of test cases for the following story ' + input,

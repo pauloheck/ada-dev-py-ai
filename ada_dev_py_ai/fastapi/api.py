@@ -28,6 +28,18 @@ def create_test(input: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.post('/project/create')
+def create_project(input: str):
+    """
+    Create a project plan for the developer, by the user input requirements.
+    Input the row requirements and the project plan will be created.
+    """
+    try:
+        print('chamando a api ' + input)
+        return create_project_plan_ai(input)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post('/story/create')
 def create_story(input: str):
     """
